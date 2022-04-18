@@ -1,0 +1,7 @@
+{
+  "name": "my-new-goals-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
