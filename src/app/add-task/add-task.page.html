@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add Task</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form [formGroup]="addTaskForm">
+  <ion-item>
+    <ion-label position="floating">Name</ion-label>
+    <ion-input formControlName="name"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Description</ion-label>
+    <ion-textarea formControlName="description"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Start Date</ion-label>
+    <ion-input type="datetime-local" formControlName="date_of_start"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">End Date</ion-label>
+    <ion-input type="datetime-local" formControlName="date_of_end"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Status</ion-label>
+    <ion-select formControlName="status" placeholder="Select One">
+      <ion-select-option value="Done">Done</ion-select-option>
+      <ion-select-option value="Not Done">Not Done</ion-select-option>
+    </ion-select>
+  </ion-item>
+<ion-button (click)="add_task()" [disabled]="addTaskForm.invalid">Submit</ion-button>
+</form>
+</ion-content>
