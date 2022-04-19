@@ -55,7 +55,7 @@ app.delete('/deletetask/:id', function(req, res){
 
     //Find the task
     Task.findByPk(id).then(function(result){
-        //Check if task was found
+        //Change Task Status
         if(result){
             if(result.status === "Not Done"){
                 result.status = "Done"
@@ -117,13 +117,13 @@ app.delete('/deletetask/:id', function(req, res){
         });
     });
     
-      //Update status of a task
+      //Update status of a goal
       app.patch('/updategoal/:id', function(req, res){
         let id = req.params.id;
     
         //Find the goal
         Goal.findByPk(id).then(function(result){
-            //Check if goal was found
+            //Change status of goal
             if(result){
                 if(result.status === "Not Done"){
                     result.status = "Done"

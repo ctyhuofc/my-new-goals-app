@@ -23,7 +23,7 @@ return this.httpClient.post('http://localhost:3000/addtask/', formData);
  }
 
  getTask(id){
-   return this.httpClient.get<Itask[]>('http://localhost:3000/`${id}`')
+   return this.httpClient.get<Itask[]>(`http://localhost:3000/${id}`)
  }
 
  updateTask(id:number, updatedStatus:any){
