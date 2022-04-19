@@ -3,13 +3,18 @@
     <ion-title>
       To Do List
     </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
+
 
 <ion-content [fullscreen]="true">
   <div *ngFor="let task of tasks">
 
     <app-task [task]="task"></app-task>
 </div>
-
+<ion-button (click)="goToAddTask()">Add Task</ion-button>
 </ion-content>

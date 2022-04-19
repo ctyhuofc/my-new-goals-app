@@ -1,14 +1,14 @@
 <ion-card *ngIf="goal.status === 'Not Done'">
 
   <ion-card-header>
-    <ion-card-subtitle>{{ goal.description}}</ion-card-subtitle>
+    <ion-card-subtitle>{{ goal.status}}</ion-card-subtitle>
     <ion-card-title>{{ goal.name}}</ion-card-title>
   </ion-card-header>
 
   <ion-card-content>
-{{ goal.date_of_start | date }} <br>
-{{ goal.description }} <br>
-{{ goal.date_of_end }} <br>
+Start Date: {{ goal.date_of_start | date }} <br>
+Description: {{ goal.description }} <br>
+End Date: {{ goal.date_of_end | date}} <br>
 <ion-checkbox (ionChange)="updateGoal()"></ion-checkbox>
 
   </ion-card-content>

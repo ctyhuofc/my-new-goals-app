@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Igoal} from'../interfaces/igoal'
 import { GoalService } from '../services/goals.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 @Component({
   selector: 'app-goals',
   templateUrl: './goals.page.html',
@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class GoalsPage implements OnInit {
 goals!:Igoal[];
-  constructor(private goalService: GoalService, private activatedRoute:ActivatedRoute) { }
+  constructor(private goalService: GoalService, private activatedRoute:ActivatedRoute, private route:Router) { }
 
   ngOnInit(): void {
     console.warn(this.activatedRoute.snapshot.params.id)
@@ -21,6 +21,10 @@ goals!:Igoal[];
     this.goalService.getGoals().subscribe((results)=> {
       this.goals = results;
     });
+  }
+
+  goToAddGoal() {
+    this.route.navigate(['/add-goal/']);
   }
 
 }

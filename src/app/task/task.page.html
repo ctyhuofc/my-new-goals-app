@@ -1,15 +1,15 @@
 <ion-card *ngIf="task.status === 'Not Done'">
 
   <ion-card-header>
-    <ion-card-subtitle>{{ task.description}}</ion-card-subtitle>
+    <ion-card-subtitle>{{ task.status}}</ion-card-subtitle>
     <ion-card-title>{{ task.name}}</ion-card-title>
   </ion-card-header>
 
   <ion-card-content>
-{{ task.date_of_start | date }} <br>
-{{ task.description }} <br>
-{{ task.date_of_end }} <br>
-<ion-checkbox (ionChange)="updateTask()"></ion-checkbox>
+Start Date: {{ task.date_of_start | date }} <br>
+Description: {{ task.description }} <br>
+End Date: {{ task.date_of_end | date }} <br>
+<ion-checkbox (ionChange)="updateTask()"></ion-checkbox> Mark As Done
 
   </ion-card-content>
 </ion-card>

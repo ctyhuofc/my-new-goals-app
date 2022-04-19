@@ -3,6 +3,9 @@
     <ion-title>
 Goals
     </ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -11,5 +14,5 @@ Goals
 
     <app-achievement-parent [goal]="goal"></app-achievement-parent>
 </div>
-
+<ion-button (click)="goToAddGoal()">Add Goal</ion-button>
 </ion-content>

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Injectable } from '@angular/core';
 import { Itask } from '../interfaces/itask';
 import { TaskService } from '../services/tasks.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastController } from '@ionic/angular';
 
 
@@ -14,7 +14,7 @@ import { ToastController } from '@ionic/angular';
 export class ToDoListPage implements OnInit {
   tasks!:Itask[];
 
-  constructor(private taskService:TaskService, private activatedRoute:ActivatedRoute, public toastController:ToastController) {
+  constructor(private taskService:TaskService, private activatedRoute:ActivatedRoute, public toastController:ToastController, private route:Router) {
 
   }
 
@@ -29,5 +29,8 @@ ionViewWillEnter(){
   this.taskService.getTasks().subscribe((results)=> {
     this.tasks = results;
   });
+}
+goToAddTask() {
+  this.route.navigate(['/add-task/']);
 }
 }
