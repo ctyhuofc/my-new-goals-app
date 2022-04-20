@@ -64,14 +64,14 @@ app.delete('/deletetask/:id', function(req, res){
             }
             //Save changes to DB
             result.save().then(function(){
-                res.redirect('/to-do-list/');
+                res.send(result);
             }).catch(function(err){
                 res.status(500).send(err);
             });
         }
-        else {
-            res.status(404).send('Task record not found');
-        }
+        // else {
+        //     res.status(404).send('Task record not found');
+        // }
         }).catch(function(err){
             res.status(500).send(err);
         });
@@ -132,13 +132,13 @@ app.delete('/deletetask/:id', function(req, res){
                 }
                 //Save changes to DB
                 result.save().then(function(){
-                    res.redirect('/goals/');
+                    res.send(result);
                 }).catch(function(err){
                     res.status(500).send(err);
                 });
             }
             else {
-                res.status(404).send('Task record not found');
+                res.status(404).send('Goal record not found');
             }
             }).catch(function(err){
                 res.status(500).send(err);
